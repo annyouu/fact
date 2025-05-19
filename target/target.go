@@ -1,19 +1,14 @@
-package target
+package target1
 
-import "fmt"
-
-func sayHello() {
-	fmt.Println("Hello")
-	// return文なし
+func callsPanic() {
+	panic("error")
 }
 
-func sayBye() string {
-	fmt.Println("Bye")
-	return "ok" // return あり
+func noRecover() {
+    callsPanic()
 }
 
-func main() {
-	sayHello() // 警告を出す
-	sayBye() // 警告を出さない
+func withRecover() {
+    defer recover()
+    panic("error")
 }
-

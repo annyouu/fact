@@ -2,9 +2,9 @@ package main
 
 import (
     "golang.org/x/tools/go/analysis/singlechecker"
-    "analyzer/noreturn"
+    "analyzer/paniccheck"
 )
 
 func main() {
-    singlechecker.Main(noreturn.Analyzer)
+    singlechecker.Main(paniccheck.Analyzer)
 }
